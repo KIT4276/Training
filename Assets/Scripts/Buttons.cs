@@ -19,13 +19,6 @@ public class Buttons : MonoBehaviour
     [Space, SerializeField]
     private Canvas _startButtonCanvas;
 
-    public void StartExercise()
-    {
-        _index = 0;
-        _planes[_index].SetActive(true);
-        _startButtonCanvas.gameObject.SetActive(false);
-    }
-
     private void SwitchExercise(int previosIndex)
     {
         _planes[previosIndex].SetActive(false);
@@ -62,6 +55,13 @@ public class Buttons : MonoBehaviour
             SwitchExercise(_index + 1);
             _slider.value = _index + 1;
         }
+    }
+
+    public void StartExercise()
+    {
+        _index = 0;
+        _planes[_index].SetActive(true);
+        _startButtonCanvas.gameObject.SetActive(false);
     }
 
     public void CloseApp()
